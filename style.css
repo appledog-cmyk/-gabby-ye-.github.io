@@ -37,7 +37,7 @@ nav {
   top: 0;
   background: var(--bg);
   z-index: 10;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #000;
 }
 
 /* Serif wordmark, matching the STAGGER logo style */
@@ -69,13 +69,13 @@ nav {
   cursor: pointer;
 }
 
-/* Hero carousel */
 .hero-carousel {
   position: relative;
   width: 100%;
   height: 70vh;
   overflow: hidden;
   background: #111;
+  border-bottom: 1px solid #000;
 }
 
 .hero-slide {
@@ -105,7 +105,6 @@ nav {
   cursor: pointer;
 }
 
-/* Marquee banner */
 .marquee {
   overflow: hidden;
   white-space: nowrap;
@@ -113,6 +112,7 @@ nav {
   color: white;
   padding: 0.5rem 0;
   text-align: center;
+  border-bottom: 1px solid #000;
 }
 
 .marquee-content {
@@ -163,14 +163,13 @@ nav {
   font-size: 0.9rem;
 }
 
-/* Centered signature-style scrolling line */
 .signature-line {
   overflow: hidden;
   white-space: nowrap;
   padding: 2rem 0;
   text-align: center;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
   background: var(--card-bg);
 }
 
@@ -179,10 +178,10 @@ nav {
   font-size: 1.3rem;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 3rem 2rem;
+  border-top: 1px solid #000;
 }
 
 .footer-logo {
