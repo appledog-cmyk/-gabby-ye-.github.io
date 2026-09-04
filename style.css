@@ -124,81 +124,35 @@ nav {
   to { transform: translateX(-100%); }
 }
 
-/* Full-bleed horizontal image strip, no gaps, no rounded corners */
+/* Full-bleed horizontal image row, no gaps, no scrolling */
 .strip-section {
   padding: 2rem 0 1rem;
-}
-
-.strip-row {
-  display: flex;
-  gap: 0;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
   width: 100%;
 }
 
-.strip-row::-webkit-scrollbar {
-  display: none;
+.strip-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  width: 100%;
 }
 
 .strip-item {
-  flex: 0 0 20%;
-  scroll-snap-align: start;
   text-decoration: none;
   color: var(--text);
-  border-right: 1px solid var(--bg);
 }
 
 .strip-item img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 300px;
   object-fit: cover;
   display: block;
 }
 
 .strip-caption {
-  display: flex;
-  justify-content: space-between;
   padding: 0.8rem 1rem;
   border-top: 1px solid #ddd;
   font-size: 0.9rem;
-}
-
-.carousel-controls {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 1rem 2rem 0;
-}
-
-.carousel-dots {
-  display: flex;
-  gap: 0.4rem;
-}
-
-.carousel-dots span {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ccc;
-  display: inline-block;
-}
-
-.carousel-dots span.active {
-  background: var(--text);
-}
-
-.carousel-arrows button {
-  background: none;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-left: 0.5rem;
-  color: var(--text);
 }
 
 /* Centered signature-style scrolling line */
@@ -252,16 +206,8 @@ section.plain {
   margin: 0 auto;
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  .hero-carousel {
-    height: 45vh;
-  }
-  .nav-links {
-    gap: 1rem;
-    font-size: 0.85rem;
-  }
-  .click-card {
-    flex: 0 0 200px;
+@media (max-width: 700px) {
+  .strip-row {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
