@@ -124,10 +124,12 @@ nav {
   to { transform: translateX(-100%); }
 }
 
-/* Full-bleed horizontal image row, no gaps, no scrolling */
+/* Full-bleed horizontal image row with black outlines, matching Stagger's grid */
 .strip-section {
-  padding: 2rem 0 1rem;
+  padding: 0;
   width: 100%;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
 }
 
 .strip-row {
@@ -140,6 +142,11 @@ nav {
 .strip-item {
   text-decoration: none;
   color: var(--text);
+  border-right: 1px solid #000;
+}
+
+.strip-item:last-child {
+  border-right: none;
 }
 
 .strip-item img {
@@ -151,7 +158,7 @@ nav {
 
 .strip-caption {
   padding: 0.8rem 1rem;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #000;
   font-size: 0.9rem;
 }
 
@@ -209,5 +216,8 @@ section.plain {
 @media (max-width: 700px) {
   .strip-row {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .strip-item:nth-child(2n) {
+    border-right: none;
   }
 }
