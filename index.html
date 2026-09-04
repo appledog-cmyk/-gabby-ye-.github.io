@@ -8,101 +8,66 @@
 </head>
 <body>
 
-    
-  <!-- AI USAGE NOTE: Overall page structure and the Stagger Coffee-inspired
-       styling (marquee banner, hover-swap project cards) were suggested by
-       Claude after I showed it a coffee shop site I liked. I adapted the
-       layout, wrote my own content, and changed the color scheme and
-       section order to fit a portfolio instead of a storefront. -->
+  <!-- AI USAGE NOTE: This restructure (multi-page site with a hero carousel,
+       marquee banner, and clickable photo grid) was built with Claude after
+       I asked it to mirror the layout of staggercoffee.com more closely.
+       I chose which pages to link to and wrote the placeholder content. -->
 
   <nav>
     <div class="logo">Cherry</div>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
     </ul>
     <button id="dark-toggle" aria-label="Toggle dark mode">🌙</button>
   </nav>
 
-  <!-- Hero section -->
-  <header class="hero">
-    <h1>Hi, I'm Cherry</h1>
-    <p>ECE + Design, Innovation & Entrepreneurship @ Carnegie Mellon</p>
-  </header>
+  <!-- Hero image carousel, styled after the fading slideshow on staggercoffee.com -->
+  <div class="hero-carousel">
+    <img src="https://placehold.co/1600x900?text=Hero+Photo+1" class="hero-slide active" alt="Hero photo 1">
+    <img src="https://placehold.co/1600x900?text=Hero+Photo+2" class="hero-slide" alt="Hero photo 2">
+    <img src="https://placehold.co/1600x900?text=Hero+Photo+3" class="hero-slide" alt="Hero photo 3">
+    <div class="hero-overlay">
+      <h1>INSERT NAME / TAGLINE</h1>
+    </div>
+  </div>
 
-  <!-- Scrolling marquee banner, styled after the Stagger Coffee site -->
+  <!-- Scrolling marquee banner -->
   <div class="marquee">
     <div class="marquee-content">
       INSERT TAGLINE • INSERT TAGLINE • INSERT TAGLINE • INSERT TAGLINE •
     </div>
   </div>
 
-  <section id="about">
-    <img src="images/placeholder.jpg" alt="Photo of Cherry" class="profile-photo">
-    <h2>About Me</h2>
-    <p>INSERT BIO — who you are, what you study, what drives you</p>
-
-    <h3>Interests</h3>
-    <ul class="tag-list">
-      <li>INSERT INTEREST 1</li>
-      <li>INSERT INTEREST 2</li>
-      <li>INSERT INTEREST 3</li>
-    </ul>
-
-    <h3>Skills</h3>
-    <ul class="tag-list">
-      <li>INSERT SKILL 1</li>
-      <li>INSERT SKILL 2</li>
-      <li>INSERT SKILL 3</li>
-    </ul>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-
-      <!-- This portfolio site itself, as required -->
-      <div class="project-card">
-        <img src="images/placeholder.jpg" alt="Screenshot of this portfolio website">
-        <div class="project-info">
-          <h3>This Portfolio Website</h3>
-          <p>Built with HTML, CSS, and JavaScript, deployed on GitHub Pages.
-             INSERT more detail about your process here.</p>
-        </div>
-      </div>
-
-      <!-- Placeholder projects using placehold.co so it's honest that
-           real content is still pending -->
-      <div class="project-card">
-        <img src="https://placehold.co/400x300?text=Project+2" alt="Placeholder for future project 2">
-        <div class="project-info">
-          <h3>INSERT PROJECT 2 (placeholder)</h3>
-          <p>INSERT DESCRIPTION</p>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <img src="https://placehold.co/400x300?text=Project+3" alt="Placeholder for future project 3">
-        <div class="project-info">
-          <h3>INSERT PROJECT 3 (placeholder)</h3>
-          <p>INSERT DESCRIPTION</p>
-        </div>
-      </div>
-
+  <!-- Clickable photo grid, styled after the product grid on staggercoffee.com,
+       but each card links into a page instead of a product -->
+  <section class="grid-section">
+    <div class="click-grid">
+      <a href="about.html" class="click-card">
+        <img src="https://placehold.co/400x300?text=About+Me" alt="Go to About Me page">
+        <p>About Me</p>
+      </a>
+      <a href="projects.html" class="click-card">
+        <img src="https://placehold.co/400x300?text=Projects" alt="Go to Projects page">
+        <p>Projects</p>
+      </a>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:INSERT_EMAIL">INSERT EMAIL</a></p>
-    <p><a href="INSERT_GITHUB_URL" target="_blank">GitHub</a></p>
-    <p><a href="INSERT_LINKEDIN_URL" target="_blank">LinkedIn</a></p>
-  </section>
-
+  <!-- Footer, mirroring the structure of staggercoffee.com's footer -->
   <footer>
-    <p>Photo placeholders from <a href="https://placehold.co" target="_blank">placehold.co</a>.
-       Built by Cherry with help from Claude (Anthropic) — see code comments for details.</p>
+    <img src="https://placehold.co/140x60?text=LOGO" alt="INSERT LOGO/NAME" class="footer-logo">
+
+    <h3>INSERT SECTION TITLE (e.g. "Get in Touch")</h3>
+    <p>INSERT LOCATION / AVAILABILITY, e.g. "Pittsburgh, PA — CMU Class of 2028"</p>
+    <p>INSERT LINE 2, e.g. "Open to internships — Summer 2027"</p>
+
+    <div class="footer-links">
+      <a href="INSERT_GITHUB_URL" target="_blank">GitHub</a>
+      <a href="INSERT_LINKEDIN_URL" target="_blank">LinkedIn</a>
+      <a href="mailto:INSERT_EMAIL">Email</a>
+    </div>
   </footer>
 
   <script src="script.js"></script>

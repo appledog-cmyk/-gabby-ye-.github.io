@@ -1,6 +1,6 @@
-/* AI USAGE NOTE: Base layout and marquee animation adapted from a suggestion
-   by Claude, modeled after staggercoffee.com's visual style. Colors,
-   spacing, and the hover-swap effect on project cards were adjusted by me. */
+/* AI USAGE NOTE: Carousel fade effect, marquee, and click-grid card styling
+   adapted from a Claude suggestion, modeled on staggercoffee.com. Colors
+   and spacing adjusted by me. */
 
 :root {
   --bg: #ffffff;
@@ -63,21 +63,43 @@ nav {
   cursor: pointer;
 }
 
-.hero {
-  text-align: center;
-  padding: 5rem 2rem;
+/* Hero carousel */
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
 }
 
-.hero h1 {
-  font-size: 3rem;
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
-.hero p {
-  margin-top: 0.5rem;
-  color: var(--accent);
+.hero-slide.active {
+  opacity: 1;
 }
 
-/* Scrolling marquee, inspired by the banner on staggercoffee.com */
+.hero-overlay {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  z-index: 2;
+}
+
+.hero-overlay h1 {
+  font-size: 2.5rem;
+}
+
+/* Marquee */
 .marquee {
   overflow: hidden;
   white-space: nowrap;
@@ -96,76 +118,82 @@ nav {
   to { transform: translateX(-100%); }
 }
 
+/* Clickable photo grid */
+.grid-section {
+  padding: 3rem 2rem;
+}
+
+.click-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.click-card {
+  text-decoration: none;
+  color: var(--text);
+  background: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  text-align: center;
+}
+
+.click-card:hover {
+  transform: translateY(-5px);
+}
+
+.click-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.click-card p {
+  padding: 1rem;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--card-bg);
+  margin-top: 2rem;
+}
+
+.footer-logo {
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* Generic sections on placeholder pages */
 section {
   padding: 4rem 2rem;
   max-width: 900px;
   margin: 0 auto;
 }
 
-.profile-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin-bottom: 1.5rem;
-}
-
-.tag-list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.tag-list li {
-  background: var(--card-bg);
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-}
-
-/* Project grid, styled after the product grid on staggercoffee.com */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.project-card {
-  background: var(--card-bg);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.2s;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-}
-
-.project-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.project-info {
-  padding: 1rem;
-}
-
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.8rem;
-  color: gray;
-}
-
 /* Responsive adjustments */
 @media (max-width: 600px) {
-  .hero h1 {
-    font-size: 2rem;
+  .hero-overlay h1 {
+    font-size: 1.6rem;
+  }
+  .hero-carousel {
+    height: 40vh;
   }
   .nav-links {
     gap: 1rem;
