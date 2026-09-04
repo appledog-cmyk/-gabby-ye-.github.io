@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cherry — Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- AI USAGE NOTE: Overall page structure and the Stagger Coffee-inspired
+       styling (marquee banner, hover-swap project cards) were suggested by
+       Claude after I showed it a coffee shop site I liked. I adapted the
+       layout, wrote my own content, and changed the color scheme and
+       section order to fit a portfolio instead of a storefront. -->
+
+  <nav>
+    <div class="logo">Cherry</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="dark-toggle" aria-label="Toggle dark mode">🌙</button>
+  </nav>
+
+  <!-- Hero section -->
+  <header class="hero">
+    <h1>Hi, I'm Cherry</h1>
+    <p>ECE + Design, Innovation & Entrepreneurship @ Carnegie Mellon</p>
+  </header>
+
+  <!-- Scrolling marquee banner, styled after the Stagger Coffee site -->
+  <div class="marquee">
+    <div class="marquee-content">
+      INSERT TAGLINE • INSERT TAGLINE • INSERT TAGLINE • INSERT TAGLINE •
+    </div>
+  </div>
+
+  <section id="about">
+    <img src="images/placeholder.jpg" alt="Photo of Cherry" class="profile-photo">
+    <h2>About Me</h2>
+    <p>INSERT BIO — who you are, what you study, what drives you</p>
+
+    <h3>Interests</h3>
+    <ul class="tag-list">
+      <li>INSERT INTEREST 1</li>
+      <li>INSERT INTEREST 2</li>
+      <li>INSERT INTEREST 3</li>
+    </ul>
+
+    <h3>Skills</h3>
+    <ul class="tag-list">
+      <li>INSERT SKILL 1</li>
+      <li>INSERT SKILL 2</li>
+      <li>INSERT SKILL 3</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+
+      <!-- This portfolio site itself, as required -->
+      <div class="project-card">
+        <img src="images/placeholder.jpg" alt="Screenshot of this portfolio website">
+        <div class="project-info">
+          <h3>This Portfolio Website</h3>
+          <p>Built with HTML, CSS, and JavaScript, deployed on GitHub Pages.
+             INSERT more detail about your process here.</p>
+        </div>
+      </div>
+
+      <!-- Placeholder projects using placehold.co so it's honest that
+           real content is still pending -->
+      <div class="project-card">
+        <img src="https://placehold.co/400x300?text=Project+2" alt="Placeholder for future project 2">
+        <div class="project-info">
+          <h3>INSERT PROJECT 2 (placeholder)</h3>
+          <p>INSERT DESCRIPTION</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://placehold.co/400x300?text=Project+3" alt="Placeholder for future project 3">
+        <div class="project-info">
+          <h3>INSERT PROJECT 3 (placeholder)</h3>
+          <p>INSERT DESCRIPTION</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:INSERT_EMAIL">INSERT EMAIL</a></p>
+    <p><a href="INSERT_GITHUB_URL" target="_blank">GitHub</a></p>
+    <p><a href="INSERT_LINKEDIN_URL" target="_blank">LinkedIn</a></p>
+  </section>
+
+  <footer>
+    <p>Photo placeholders from <a href="https://placehold.co" target="_blank">placehold.co</a>.
+       Built by Cherry with help from Claude (Anthropic) — see code comments for details.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
