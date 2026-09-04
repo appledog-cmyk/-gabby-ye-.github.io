@@ -1,11 +1,7 @@
-/* AI USAGE NOTE: Layout, carousel, and typography choices below were
-   developed with Claude to match staggercoffee.com's structure from
-   screenshots I provided. I adjusted colors, spacing, and content. */
 
 :root {
   --bg: #ffffff;
   --text: #1a1a1a;
-  --accent: #d97757;
   --card-bg: #f5f3f0;
 }
 
@@ -190,7 +186,6 @@ footer {
 
 .footer-info p {
   font-size: 0.9rem;
-  color: #666;
 }
 
 .footer-links {
@@ -241,12 +236,6 @@ section.plain {
   height: auto;
   display: block;
   border: 1px solid #000;
-}
-
-.photo-caption {
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-  color: #666;
 }
 
 .about-text-col {
