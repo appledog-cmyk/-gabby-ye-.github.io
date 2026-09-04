@@ -31,7 +31,6 @@ body {
 
 nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2.5rem;
   position: sticky;
@@ -53,6 +52,8 @@ nav {
   display: flex;
   list-style: none;
   gap: 2.5rem;
+  margin-left: 3rem;
+  margin-right: auto;
 }
 
 .nav-links a {
