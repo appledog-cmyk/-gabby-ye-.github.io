@@ -124,57 +124,52 @@ nav {
   to { transform: translateX(-100%); }
 }
 
-/* Horizontal scrolling card row */
-.grid-section {
-  padding: 3rem 2.5rem 1rem;
+/* Full-bleed horizontal image strip, no gaps, no rounded corners */
+.strip-section {
+  padding: 2rem 0 1rem;
 }
 
-.carousel-row {
+.strip-row {
   display: flex;
-  gap: 1.5rem;
+  gap: 0;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  padding-bottom: 0.5rem;
+  width: 100%;
 }
 
-.carousel-row::-webkit-scrollbar {
+.strip-row::-webkit-scrollbar {
   display: none;
 }
 
-.click-card {
-  flex: 0 0 260px;
+.strip-item {
+  flex: 0 0 20%;
   scroll-snap-align: start;
   text-decoration: none;
   color: var(--text);
-  background: var(--card-bg);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.2s;
-  text-align: left;
+  border-right: 1px solid var(--bg);
 }
 
-.click-card:hover {
-  transform: translateY(-5px);
-}
-
-.click-card img {
+.strip-item img {
   width: 100%;
-  height: 190px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
+  display: block;
 }
 
-.click-card p {
-  padding: 0.9rem;
-  font-weight: 600;
-  font-size: 0.95rem;
+.strip-caption {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
 }
 
 .carousel-controls {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  margin-top: 1rem;
+  padding: 1rem 2rem 0;
 }
 
 .carousel-dots {
