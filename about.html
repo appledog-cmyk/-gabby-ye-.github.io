@@ -9,8 +9,13 @@
 </head>
 <body>
 
+  <!-- AI USAGE NOTE: Two-column About page layout (photo left, bio right,
+       caption under photo) was adapted with Claude from a portfolio site
+       screenshot I shared as a reference. I wrote the bio content and
+       chose which links to include. -->
+
   <nav>
-    <div class="logo">GABBY YE</div>
+    <div class="logo">CHERRY</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Me</a></li>
@@ -19,10 +24,32 @@
     <button id="dark-toggle" aria-label="Toggle dark mode">🌙</button>
   </nav>
 
-  <section>
-    <h1>About Me — coming soon</h1>
-    <p>We'll build this page out next.</p>
+<section class="about-layout">
+    <div class="about-photo-col">
+      <img src="https://placehold.co/700x900?text=Photo" alt="Photo of Cherry">
+      <p class="photo-caption">INSERT MONTH YEAR</p>
+    </div>
+
+    <div class="about-text-col">
+      <p>INSERT PARAGRAPH 1</p>
+      <p>INSERT PARAGRAPH 2</p>
+      <p>INSERT PARAGRAPH 3</p>
+    </div>
   </section>
+
+  <footer>
+    <div class="footer-logo">CHERRY</div>
+    <div class="footer-info">
+      <h3>Get in Touch</h3>
+      <p>INSERT LOCATION, e.g. "Pittsburgh, PA — CMU Class of 2028"</p>
+      <p>INSERT LINE 2, e.g. "Open to internships — Summer 2027"</p>
+    </div>
+    <div class="footer-links">
+      <a href="INSERT_GITHUB_URL" target="_blank">GitHub</a>
+      <a href="INSERT_LINKEDIN_URL" target="_blank">LinkedIn</a>
+      <a href="mailto:INSERT_EMAIL">Email</a>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
