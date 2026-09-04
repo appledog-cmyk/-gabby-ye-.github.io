@@ -5,16 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cherry — Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <!-- AI USAGE NOTE: Playfair Display was suggested by Claude as a close
+       match to the serif wordmark font used on staggercoffee.com. -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- AI USAGE NOTE: This restructure (multi-page site with a hero carousel,
-       marquee banner, and clickable photo grid) was built with Claude after
-       I asked it to mirror the layout of staggercoffee.com more closely.
-       I chose which pages to link to and wrote the placeholder content. -->
+  <!-- AI USAGE NOTE: Nav bar, hero, and bottom scrolling-card section were
+       rebuilt with Claude to match staggercoffee.com's actual layout more
+       closely, based on screenshots I shared. I picked the font, wrote the
+       content, and chose which sections to keep. -->
 
   <nav>
-    <div class="logo">Cherry</div>
+    <div class="logo">CHERRY</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Me</a></li>
@@ -23,50 +26,72 @@
     <button id="dark-toggle" aria-label="Toggle dark mode">🌙</button>
   </nav>
 
-  <!-- Hero image carousel, styled after the fading slideshow on staggercoffee.com -->
+  <!-- Hero image carousel with pause button, styled after staggercoffee.com -->
   <div class="hero-carousel">
+    <button id="pause-btn" aria-label="Pause slideshow">❚❚</button>
     <img src="https://placehold.co/1600x900?text=Hero+Photo+1" class="hero-slide active" alt="Hero photo 1">
     <img src="https://placehold.co/1600x900?text=Hero+Photo+2" class="hero-slide" alt="Hero photo 2">
     <img src="https://placehold.co/1600x900?text=Hero+Photo+3" class="hero-slide" alt="Hero photo 3">
-    <div class="hero-overlay">
-      <h1>INSERT NAME / TAGLINE</h1>
-    </div>
   </div>
 
-  <!-- Scrolling marquee banner -->
+  <!-- Scrolling marquee banner, kept centered -->
   <div class="marquee">
     <div class="marquee-content">
       INSERT TAGLINE • INSERT TAGLINE • INSERT TAGLINE • INSERT TAGLINE •
     </div>
   </div>
 
-  <!-- Clickable photo grid, styled after the product grid on staggercoffee.com,
-       but each card links into a page instead of a product -->
+  <!-- Horizontal scrolling card row, styled after the product carousel on staggercoffee.com -->
   <section class="grid-section">
-    <div class="click-grid">
+    <div class="carousel-row" id="carousel-row">
       <a href="about.html" class="click-card">
         <img src="https://placehold.co/400x300?text=About+Me" alt="Go to About Me page">
         <p>About Me</p>
       </a>
       <a href="projects.html" class="click-card">
-        <img src="https://placehold.co/400x300?text=Projects" alt="Go to Projects page">
-        <p>Projects</p>
+        <img src="https://placehold.co/400x300?text=Portfolio+Site" alt="This portfolio website">
+        <p>This Portfolio Website</p>
       </a>
+      <a href="projects.html" class="click-card">
+        <img src="https://placehold.co/400x300?text=Project+2" alt="Placeholder project 2">
+        <p>INSERT PROJECT 2</p>
+      </a>
+      <a href="projects.html" class="click-card">
+        <img src="https://placehold.co/400x300?text=Project+3" alt="Placeholder project 3">
+        <p>INSERT PROJECT 3</p>
+      </a>
+    </div>
+
+    <div class="carousel-controls">
+      <div class="carousel-dots" id="carousel-dots"></div>
+      <div class="carousel-arrows">
+        <button id="prev-btn" aria-label="Previous">←</button>
+        <button id="next-btn" aria-label="Next">→</button>
+      </div>
     </div>
   </section>
 
-  <!-- Footer, mirroring the structure of staggercoffee.com's footer -->
-  <footer>
-    <img src="https://placehold.co/140x60?text=LOGO" alt="INSERT LOGO/NAME" class="footer-logo">
+  <!-- Centered scrolling "signature menu" style line -->
+  <div class="signature-line">
+    <div class="signature-content">
+      INSERT SKILL/INTEREST 1 — INSERT SKILL/INTEREST 2 — INSERT SKILL/INTEREST 3 — INSERT SKILL/INTEREST 4 —
+    </div>
+  </div>
 
-    <h3>INSERT SECTION TITLE (e.g. "Get in Touch")</h3>
-    <p>INSERT LOCATION / AVAILABILITY, e.g. "Pittsburgh, PA — CMU Class of 2028"</p>
-    <p>INSERT LINE 2, e.g. "Open to internships — Summer 2027"</p>
+  <!-- Footer, mirroring staggercoffee.com's footer layout -->
+  <footer>
+    <div class="footer-logo">CHERRY</div>
+
+    <div class="footer-info">
+      <h3>Get in Touch</h3>
+      <p>INSERT LOCATION, e.g. "Pittsburgh, PA — CMU Class of 2028"</p>
+      <p>INSERT LINE 2, e.g. "Open to internships — Summer 2027"</p>
+    </div>
 
     <div class="footer-links">
-      <a href="INSERT_GITHUB_URL" target="_blank">GitHub</a>
-      <a href="INSERT_LINKEDIN_URL" target="_blank">LinkedIn</a>
-      <a href="mailto:INSERT_EMAIL">Email</a>
+      <a href="INSERT_GITHUB_URL" target="_blank" aria-label="GitHub">GitHub</a>
+      <a href="INSERT_LINKEDIN_URL" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+      <a href="mailto:INSERT_EMAIL" aria-label="Email">Email</a>
     </div>
   </footer>
 

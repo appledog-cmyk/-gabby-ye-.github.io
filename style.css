@@ -1,6 +1,6 @@
-/* AI USAGE NOTE: Carousel fade effect, marquee, and click-grid card styling
-   adapted from a Claude suggestion, modeled on staggercoffee.com. Colors
-   and spacing adjusted by me. */
+/* AI USAGE NOTE: Layout, carousel, and typography choices below were
+   developed with Claude to match staggercoffee.com's structure from
+   screenshots I provided. I adjusted colors, spacing, and content. */
 
 :root {
   --bg: #ffffff;
@@ -33,27 +33,32 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 2.5rem;
   position: sticky;
   top: 0;
   background: var(--bg);
   z-index: 10;
+  border-bottom: 1px solid #eee;
 }
 
-.logo {
-  font-weight: bold;
-  font-size: 1.2rem;
+/* Serif wordmark, matching the STAGGER logo style */
+.logo, .footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .nav-links a {
   color: var(--text);
   text-decoration: none;
+  font-size: 0.95rem;
 }
 
 #dark-toggle {
@@ -67,8 +72,9 @@ nav {
 .hero-carousel {
   position: relative;
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   overflow: hidden;
+  background: #111;
 }
 
 .hero-slide {
@@ -86,26 +92,26 @@ nav {
   opacity: 1;
 }
 
-.hero-overlay {
+#pause-btn {
   position: absolute;
-  bottom: 2rem;
-  left: 2rem;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 3;
+  background: none;
+  border: none;
   color: white;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-  z-index: 2;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.hero-overlay h1 {
-  font-size: 2.5rem;
-}
-
-/* Marquee */
+/* Marquee banner */
 .marquee {
   overflow: hidden;
   white-space: nowrap;
   background: var(--accent);
   color: white;
   padding: 0.5rem 0;
+  text-align: center;
 }
 
 .marquee-content {
@@ -118,27 +124,34 @@ nav {
   to { transform: translateX(-100%); }
 }
 
-/* Clickable photo grid */
+/* Horizontal scrolling card row */
 .grid-section {
-  padding: 3rem 2rem;
+  padding: 3rem 2.5rem 1rem;
 }
 
-.click-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.carousel-row {
+  display: flex;
   gap: 1.5rem;
-  max-width: 900px;
-  margin: 0 auto;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 0.5rem;
+}
+
+.carousel-row::-webkit-scrollbar {
+  display: none;
 }
 
 .click-card {
+  flex: 0 0 260px;
+  scroll-snap-align: start;
   text-decoration: none;
   color: var(--text);
   background: var(--card-bg);
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.2s;
-  text-align: center;
+  text-align: left;
 }
 
 .click-card:hover {
@@ -147,41 +160,98 @@ nav {
 
 .click-card img {
   width: 100%;
-  height: 200px;
+  height: 190px;
   object-fit: cover;
 }
 
 .click-card p {
-  padding: 1rem;
-  font-weight: bold;
+  padding: 0.9rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.carousel-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ccc;
+  display: inline-block;
+}
+
+.carousel-dots span.active {
+  background: var(--text);
+}
+
+.carousel-arrows button {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  color: var(--text);
+}
+
+/* Centered signature-style scrolling line */
+.signature-line {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background: var(--card-bg);
+}
+
+.signature-content {
+  display: inline-block;
+  font-size: 1.3rem;
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 3rem 2rem;
-  background: var(--card-bg);
-  margin-top: 2rem;
 }
 
 .footer-logo {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-info p {
+  font-size: 0.9rem;
+  color: #666;
 }
 
 .footer-links {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .footer-links a {
   color: var(--text);
   text-decoration: none;
+  font-size: 0.9rem;
 }
 
 /* Generic sections on placeholder pages */
-section {
+section.plain {
   padding: 4rem 2rem;
   max-width: 900px;
   margin: 0 auto;
@@ -189,14 +259,14 @@ section {
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
-  .hero-overlay h1 {
-    font-size: 1.6rem;
-  }
   .hero-carousel {
-    height: 40vh;
+    height: 45vh;
   }
   .nav-links {
     gap: 1rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+  }
+  .click-card {
+    flex: 0 0 200px;
   }
 }
