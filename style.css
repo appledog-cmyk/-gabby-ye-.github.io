@@ -126,7 +126,6 @@ nav {
   padding: 0;
   width: 100%;
   border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
 }
 
 .strip-row {
@@ -165,7 +164,6 @@ nav {
   padding: 2rem 0;
   text-align: center;
   border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
   background: var(--card-bg);
 }
 
